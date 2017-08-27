@@ -23,6 +23,9 @@ skip_files:
 health_check:
   enable_health_check: True
 
+env_variables:
+  TRUST_PROXY: '1'
+
 automatic_scaling:
   min_num_instances: 1
   max_num_instances: 2

@@ -12,6 +12,12 @@ var routeRedirector = require('./routes/redirector');
 
 var config = require('./conf/app');
 
+// Special handling to default HSTS by default
+// Set ENV USE_HSTS if you want to enable it
+if(process.env.USE_HSTS === undefined && config.appsecurity.hsts !== undefined){
+  delete config.appsecurity.hsts;
+}
+
 var app = express();
 
 // view engine setup
@@ -19,7 +25,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // Trust Proxy Headers
-app.enable('trust proxy');
+if(process.env.TRUST_PROXY !== undefined){
+  app.enable('trust proxy');
+}
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
