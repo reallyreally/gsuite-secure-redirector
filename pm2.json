@@ -1,0 +1,12 @@
+{
+  "apps": [{
+    "name": "gsuite-secure-redirector",
+    "script": "./bin/www",
+    "instances" : 0,
+    "exec_mode" : "cluster",
+    "post_update": ["npm install", "echo Launching..."],
+    "env": {
+      "production": true
+    }
+  }]
+}

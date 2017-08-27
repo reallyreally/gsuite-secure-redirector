@@ -1,0 +1,30 @@
+{
+   "appsecurity":{
+      "csp":{
+         "fontSrc":[
+            "'self'"
+         ],
+         "imgSrc":[
+            "'self'"
+         ],
+         "defaultSrc":[
+            "'self'"
+         ],
+         "reportUri":"/v1/cspreport",
+         "styleSrc":[
+            "'self'"
+         ],
+         "scriptSrc":[
+            "'self'"
+         ],
+         "upgradeInsecureRequests":true
+      },
+      "hsts":{
+         "maxAge":10886400,
+         "includeSubDomains":true,
+         "preload":true,
+         "force":true
+      },
+      "poweredBy":"really-secure"
+   }
+}
