@@ -12,6 +12,8 @@ var routeRedirector = require('./routes/redirector');
 
 var config = require('./conf/app');
 
+console.log("ENV:" + JSON.stringify(process.env,null,4));
+
 // Special handling to default HSTS by default
 // Set ENV USE_HSTS if you want to enable it
 if(process.env.USE_HSTS === undefined && config.appsecurity.hsts !== undefined){
