@@ -17,6 +17,8 @@ var config = require('./conf/app');
 if(process.env.USE_HSTS === undefined && config.appsecurity.hsts !== undefined){
   delete config.appsecurity.hsts;
   console.log("No USE_HSTS env variable set. Not using HSTS.");
+} else if (config.appsecurity.hsts !== undefined){
+  console.log("Enabling HSTS");
 }
 
 var app = express();
