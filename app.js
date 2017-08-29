@@ -16,6 +16,7 @@ var config = require('./conf/app');
 // Set ENV USE_HSTS if you want to enable it
 if(process.env.USE_HSTS === undefined && config.appsecurity.hsts !== undefined){
   delete config.appsecurity.hsts;
+  console.log("No USE_HSTS env variable set. Not using HSTS.");
 }
 
 var app = express();
@@ -26,6 +27,7 @@ app.set('view engine', 'hbs');
 
 // Trust Proxy Headers
 if(process.env.TRUST_PROXY !== undefined){
+  console.log("Enableing proxy headers trust.");
   app.enable('trust proxy');
 }
 
