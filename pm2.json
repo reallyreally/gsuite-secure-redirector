@@ -6,7 +6,8 @@
     "exec_mode" : "cluster",
     "post_update": ["npm install", "echo Launching..."],
     "env": {
-      "production": true
+      "production": true,
+      "NODE_ENV": "production"
     }
   }]
 }
