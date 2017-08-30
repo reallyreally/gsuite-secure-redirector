@@ -20,7 +20,7 @@
          "upgradeInsecureRequests":true
       },
       "hsts":{
-         "maxAge":10886400,
+         "maxAge":31536000,
          "includeSubDomains":true,
          "preload":true,
          "force":true
