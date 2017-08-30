@@ -12,15 +12,10 @@ var routeRedirector = require('./routes/redirector');
 
 var config = require('./conf/app');
 
-console.log("ENV:" + JSON.stringify(process.env,null,4));
-
 // Special handling to default HSTS by default
 // Set ENV USE_HSTS if you want to enable it
 if(process.env.USE_HSTS === undefined && config.appsecurity.hsts !== undefined){
   delete config.appsecurity.hsts;
-  console.log("No USE_HSTS env variable set. Not using HSTS.");
-} else if (config.appsecurity.hsts !== undefined){
-  console.log("Enabling HSTS");
 }
 
 var app = express();
@@ -31,7 +26,6 @@ app.set('view engine', 'hbs');
 
 // Trust Proxy Headers
 if(process.env.TRUST_PROXY !== undefined){
-  console.log("Enableing proxy headers trust.");
   app.enable('trust proxy');
 }
 
