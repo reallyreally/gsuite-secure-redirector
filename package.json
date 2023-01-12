@@ -11,7 +11,7 @@
     "@really/really-secure": "^1.1.3",
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",
+    "debug": "~2.6.9",
     "express": "~4.15.2",
     "hbs": "~4.0.1",
     "less-middleware": "~2.2.0",
